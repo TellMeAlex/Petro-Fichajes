@@ -1,0 +1,24 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "command": "npm run watch",
+      "name": "Run watch",
+      "request": "launch",
+      "type": "node-terminal"
+    },
+    {
+      "command": "npm run test -- --watch",
+      "name": "Test watch",
+      "request": "launch",
+      "type": "node-terminal"
+    },
+    {
+      "name": "Attach to Node Functions",
+      "type": "node",
+      "request": "attach",
+      "port": 9229,
+      "preLaunchTask": "func: host start"
+    }
+  ]
+}
