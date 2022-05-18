@@ -20,6 +20,15 @@ jobs:
       - name: 'Checkout GitHub Action'
         uses: actions/checkout@v2
 
+      - name: 'set variable substitution'
+       uses: microsoft/variable-substitution@v1 
+      with:
+        files: 'config/production.json'
+      env:
+        Var1: "value1"
+        Var2.key1: "value2"
+        SECRET: ${{ secrets.SOME_SECRET }}
+
       - name: Setup Node ${{ env.NODE_VERSION }} Environment
         uses: actions/setup-node@v1
         with:
